@@ -1,0 +1,36 @@
+header {
+    overflow: hidden;
+    margin: 5px;
+    border: 2px solid red;
+}
+
+.basket {
+    float: right;
+    border: 3px solid blue;
+    height: 60px;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.main {
+    overflow: hidden;
+}
+
+.filter {
+    margin: 5px;
+    border: 2px solid red;
+    width: calc(20% - 14px);
+    float: left;
+    height: 600px ;
+}
+
+.goods {
+    margin: 5px;
+    border: 2px solid red;
+    float: left;
+    width: calc(80% - 14px);
+    height: 600px;
+}
