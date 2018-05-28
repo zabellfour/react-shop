@@ -33,4 +33,34 @@ header {
     float: left;
     width: calc(80% - 14px);
     height: 600px;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.card{
+    width: 31%;
+    margin-bottom: 15px;
+    padding: 5px;
+    border:1px solid green;
+    font-size: 10px;
+}
+
+.card img{
+    width: 100%;
+}
+.card h3{
+    line-height: 1;
+    margin-bottom: 5px;
+}
+.card  .additional-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+    padding: 10px 0 0;
 }
