@@ -64,3 +64,12 @@ header {
     text-transform: uppercase;
     padding: 10px 0 0;
 }
+
+.search-field {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.search-field input {
+    padding: 5px;
+}
