@@ -17,10 +17,11 @@ export default class GoodsCard extends React.Component{
 
         for(let index in cardParse) {
             if(Object.keys(cardParse).includes(this.props.card['product-id'])) {
-                cardParse[index]['product-count'] += 1;
+                cardParse[this.props.card['product-id']]['product-count'] = Number(cardParse[this.props.card['product-id']]['product-count']) + 1;
                 return;
             }
-            cardParse[index]['product-count'] = 1;
+            cardParse[this.props.card['product-id']] = {};
+            cardParse[this.props.card['product-id']]['product-count'] = 1;
         }
 
         if(!Object.keys(cardParse).length) {
