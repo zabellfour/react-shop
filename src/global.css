@@ -25,6 +25,8 @@ header {
     width: calc(20% - 14px);
     float: left;
     height: 600px ;
+    padding:20px 10px;
+    box-sizing: border-box;
 }
 
 .goods {
