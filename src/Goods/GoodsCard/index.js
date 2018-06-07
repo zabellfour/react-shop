@@ -5,34 +5,34 @@ export default class GoodsCard extends React.Component{
         super(props);
     }
 
-    addGoods(){
-        //TODO
+    // addGoods(){
+    //     //TODO
 
-        console.log(this.props.card);
+    //     console.log(this.props.card);
 
-        const card = localStorage.getItem('key');
-        const cardParse = JSON.parse(card) || {};
+    //     const card = localStorage.getItem('key');
+    //     const cardParse = JSON.parse(card) || {};
 
-        console.log(cardParse);
+    //     console.log(cardParse);
 
-        for(let index in cardParse) {
-            if(Object.keys(cardParse).includes(this.props.card['product-id'])) {
-                cardParse[this.props.card['product-id']]['product-count'] = Number(cardParse[this.props.card['product-id']]['product-count']) + 1;
-                return;
-            }
-            cardParse[this.props.card['product-id']] = {};
-            cardParse[this.props.card['product-id']]['product-count'] = 1;
-        }
+    //     for(let index in cardParse) {
+    //         if(Object.keys(cardParse).includes(this.props.card['product-id'])) {
+    //             cardParse[this.props.card['product-id']]['product-count'] = Number(cardParse[this.props.card['product-id']]['product-count']) + 1;
+    //             return;
+    //         }
+    //         cardParse[this.props.card['product-id']] = {};
+    //         cardParse[this.props.card['product-id']]['product-count'] = 1;
+    //     }
 
-        if(!Object.keys(cardParse).length) {
+    //     if(!Object.keys(cardParse).length) {
 
-            cardParse[this.props.card['product-id']] = {};
-            cardParse[this.props.card['product-id']]['product-count'] = 1;
-        }
+    //         cardParse[this.props.card['product-id']] = {};
+    //         cardParse[this.props.card['product-id']]['product-count'] = 1;
+    //     }
 
-        localStorage.setItem('key', JSON.stringify(cardParse));
+    //     localStorage.setItem('key', JSON.stringify(cardParse));
 
-    }
+    // }
 
     render(){
         
@@ -53,7 +53,7 @@ export default class GoodsCard extends React.Component{
                     <a href={cardData['product-url']}>See more</a>
                     <span 
                         className="add-to-card"
-                        onClick={this.addGoods.bind(this)}>Add to card
+                        onClick={this.addToBasket}>Add to card
                     </span>
                 </div>
             </div>

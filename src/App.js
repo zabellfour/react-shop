@@ -49,21 +49,51 @@ const goodsEl = [
 ];
 class App extends Component {
 
+    constructor( props ){
+      super( props );
+      
+      this.state = {
+          basket: []
+      }
+      
+      this.addToBasket = item => {
+          return () => {
+              this.setState( currentState => {
+                  return {
+                      basket: currentState.basket.concat( item['product-name'] )
+                  }
+              });
+          }
+      }
+      
+      this.removeFromBasket = elementIndex => {
+          this.setState( currentState => {
+              return {
+                  basket: currentState.basket.filter( ( el, i ) => i !== elementIndex )
+              }
+          });
+      }
+  }
+
 
   render() {
     return (
       <div>
         <header>
-          <Basket/>
+          <Basket
+            removeFromBasket={this.removeFromBasket}
+            basketItems={this.state.basket}
+          />
         </header>
         <main className="main">
           <Filter />
-          <Goods items = {goodsEl}/>
+          <Goods items={goodsEl} addToBasket={this.addToBasket}/>
         </main>
       </div>
     );
   }
-
 }
+
+
 
 export default App;

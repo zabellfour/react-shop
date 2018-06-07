@@ -20,13 +20,13 @@ export default class Goods extends React.Component{
        
         return <div  className="goods">
 
-            <div class="search-field">
+            <div className="search-field">
               <input value={this.state.value} onChange={this.setValue} placeholder="type to search"/>
             </div>
             
             {
                 
-                this.props.items.filter(this.filter).map((el, i ) => <GoodsCard key = {i} card = {el}/>)
+                this.props.items.filter(this.filter).map((el, i ) => <GoodsCard key = {i} card = {el} addToBasket={this.props.addToBasket}/>)
 
             }
         </div>
