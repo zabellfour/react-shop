@@ -1,7 +1,13 @@
 header {
-    overflow: hidden;
     margin: 5px;
     border: 2px solid red;
+}
+
+header:after {
+    content: '';
+    display: block;
+    clear: both;
+    overflow: hidden;
 }
 
 .basket {
@@ -13,6 +19,7 @@ header {
     align-items: center;
     justify-content: center;
     text-align: center;
+    position: relative;
 }
 
 .main {
@@ -76,4 +83,22 @@ header {
 
 .links-holder .add-to-card {
     float: right;
+}
+
+.goods-list {
+    width: 200px;
+    background: white;
+    padding: 10px;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 1000;
+    border: 2px solid blue;
+}
+
+.goods-list li {
+    display: block;
+    list-style: none;
+    margin-bottom: 10px;
 }

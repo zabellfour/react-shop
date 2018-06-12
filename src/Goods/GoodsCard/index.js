@@ -53,7 +53,7 @@ export default class GoodsCard extends React.Component{
                     <a href={cardData['product-url']}>See more</a>
                     <span 
                         className="add-to-card"
-                        onClick={this.addToBasket}>Add to card
+                        onClick={this.props.addToBasket(cardData)}>Add to card
                     </span>
                 </div>
             </div>

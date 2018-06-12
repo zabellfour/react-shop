@@ -5,6 +5,10 @@ export default class Basket extends React.Component {
 
 	 constructor( props ) {
         super( props );
+
+       this.state = {
+           isHidden: true
+       }
         
         this.removeHandler = e => {
             const elementIndex = +e.target.getAttribute( "data-element-index" );
@@ -18,16 +22,25 @@ export default class Basket extends React.Component {
             </li>
         )
     }
+
+    toggleHidden(){
+        this.setState({
+            isHidden: !this.state.isHidden
+        })
+    }
     
     render() {
         return (
 			<div className="basket">
-				Basket component
-				<ul>{this.props.basketItems.map( this.itemsMapper )}</ul>
+          <a href="#" onClick={this.toggleHidden.bind(this)}>Basket</a>
+          {!this.state.isHidden && <ul className="goods-list">{this.props.basketItems.map( this.itemsMapper )}</ul>}
 			</div>
         )
     }
 }
+const BasketList = () => (
+    <ul className="goods-list">{this.props.basketItems.map( this.itemsMapper )}</ul>
+)
 
 
 Basket.propTypes = {
